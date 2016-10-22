@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %} 
+<html>
+	<head>
+		<title>Sign up</title>
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		<link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static './css/style.css' %}" rel="stylesheet">
+		<link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/>
+
+	</head>
+
+	<body>
+		 
+		<div class="nav">
+		<div class='logo'>{% static './imgs/logos.png' %}</div>
+		<ul class="menu">
+		<li class="btMenu">
+		<a href="javascript:void(0)">MENU</a></li>
+		<li class="menuItem"><a href="{% url 'index' %}">Home</a></li>
+		<li class="menuItem"><a href="{% url 'details' %}">About Us</a></li>
+		<li class="menuItem"><a href="#">Mission</a></li>
+		<li class="menuItem"><a href="#">Our Projects</a></li>
+		<li class="menuItem"><a href="#">Why Us</a></li>
+		<li class="menuItem"><a href="{% url 'account' %}">Sign Up</a></li>
+		<li class="menuItem"><a href="#">Sign In</a></li>
+		
+		</ul>
+		</div>
+		<h1><center>Create an account</center></h1>
+		{% if registered %}
+		 <strong>thank you for registering with The Django Girls Kampala!</strong>
+		<a href="/welcome/">Return to the homepage.</a><br />
+		{% else %}
+		<strong>Please click sign up on our menu to register!</strong><br />
+		{% csrf_token %}
+		{{ user_form.as_p }}
+		{{ profile_form.as_p }}
+		<!-- Provide a button to click to submit the form. -->
+		</form>
+		{% endif %}
+
+</section>
+ <section class="social " id='social'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="social_icons">
+          <ul>
+            <li class="facebook"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-facebook"></i> </a> </li>
+            <li class="twitter"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-twitter"></i> </a> </li>
+            <li class="dribbble"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-dribbble"></i> </a> </li>
+            <li class="googleplus"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-google"></i> </a> </li>
+            <li class="linkedin "> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-linkedin"></i> </a> </li>
+            <li class="pinterest"> <a href="#." data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s"><i class="fa fa-pinterest"></i> </a> </li>
+          </ul>
+        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	</body>
+</html>
