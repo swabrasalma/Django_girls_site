@@ -121,11 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIR = (
-    os.path.join(BASE_DIR,"static"),
-        '/static/imgs/static/'
-)
+
+STATICFILES_DIR=(
+    'path/to/website/welcome/static/bootstrap/',
+    )
+
 TEMPLATES_DIR = (
-    os.path.join(BASE_DIR,"templates")
+    os.path.join(BASE_DIR,"templates"),
 )
 
